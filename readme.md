@@ -1,10 +1,10 @@
-# MyToken Smart Contract
+# Project: Create a Token
 
 ## Overview
 
-The `MyEdge` smart contract is a simple token on the local blockchain. It includes:
+The `MyEdge` smart contract is a simple token deployed on the local blockchain. It includes the following features:
 
-- Public variables for token details: name, abbreviation, and total supply.
+- Public variables for token details such as name, abbreviation, and total supply.
 - A mapping to track balances of addresses.
 - Functions to mint and burn tokens with appropriate checks.
 
@@ -25,23 +25,28 @@ The `MyEdge` smart contract is a simple token on the local blockchain. It includ
 
 #### Mint Function
 
-function mint(address _to, uint _value) public {
-    require(totalSupply + _value <= MAX_SUPPLY, "Exceeds maximum supply of 5000");
-    totalSupply += _value;
-    balances[_to] += _value;
-}
+##
+        function mint(address _to, uint _value) public {
+        require(totalSupply + _value <= MAX_SUPPLY, "Exceeds maximum supply of 5000");
+        totalSupply += _value;
+        balances[_to] += _value;
+        }
 
 #### Burn Function
 
-function burn(address _from, uint _value) public {
-    require(balances[_from] >= _value, "Insufficient balance to burn");
-    totalSupply -= _value;
-    balances[_from] -= _value;
-}
+##
+        function burn(address _from, uint _value) public {
+        require(balances[_from] >= _value, "Insufficient balance to burn");
+        totalSupply -= _value;
+        balances[_from] -= _value;
+        }
 
-#### Usage
-# ##Minting Tokens:
-mint(address recipient, uint amount);
+### Usage
 
-# ##Burning Tokens:
-burn(address sender, uint amount);
+#### Minting Tokens:
+##
+        mint(address recipient, uint amount);
+
+#### Burning Tokens:
+##
+        burn(address sender, uint amount);
